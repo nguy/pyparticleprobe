@@ -34,7 +34,18 @@ dsd.get_bin_parameters() # Bin the data over diameters bin
 dsd.get_ts_parameters() # Bin the data over each time step
 
 dsd.get_model_parameters(modelName='gamma_ua98') # Get the model fit parameters, default uses gamma model as in Ulbrich and Atlas (1998)
+```
 
 ## Requirements
-This library borrow heavily from the [PyDisdrometer] (https://github.com/josephhardinee/PyDisdrometer) package.
+This library borrow heavily from the [PyDisdrometer](https://github.com/josephhardinee/PyDisdrometer) package.
 Therefore it uses the typical scientific python stack
+
+It also requires the [PyTMatrix Package](https://github.com/jleinonen/pytmatrix).
+
+## Notes
+This code is in beta format and works with data from the NOAA P-3 aircraft that has been processed.  It should be extendable to other probe data.  
+
+Future enhancements will hopefully include the ability to read other data files.  
+Also, the plotting portion depends on a local library on my machine and therefore won't work.  This will eventually be changed to allow some plots to be produced.
+
+
