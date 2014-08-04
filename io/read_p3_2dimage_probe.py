@@ -30,9 +30,8 @@ import netCDF4 as n4
 import matplotlib.dates as mdate
 import scipy.interpolate as si
 
-import pyaircraft.io.read_p3_flight as p3FltVar
-from general.atmconst import AtmConst
-import general.library as gl
+import read_p3_flight as p3FltVar
+#import general.library as gl
 #-------------------------------------------------------------------
 # Define various constants that may be used for calculations
 #===============================================================
@@ -237,6 +236,9 @@ def ucsc_flt_lev_vars(fname):
 # HISTORY::
 #   7 Mar 2014 - Nick Guy NOAA/NSSL/WRDD, NRC
 #---------------------------------------------------
+    # Set a sea level density value
+    sea_level_dens = 1.2250 #[kg/m^3]
+    
     # Read the NetCDF
     ncFile = n4.Dataset(fname,'r')
 
@@ -250,7 +252,7 @@ def ucsc_flt_lev_vars(fname):
     np.ma.masked_invalid(Temp)
     Alt = ncFile.variables['AltGPS.3'][:]
     np.ma.masked_invalid(Alt)
-    RhoAir = AtmConst.sea_level_dens * np.exp(-0.04 * Alt / Temp)
+    RhoAir = sea_level_dens * np.exp(-0.04 * Alt / Temp)
     del Temp
     
     # Pull out the start time

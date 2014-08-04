@@ -411,6 +411,30 @@ class DropSizeDistribution(object):
 
     ##########################################
     
+    def t14_get_index(self, intercept=None):
+        '''
+        Returns the index for convective-stratiform-transition classification
+        via the separator line based upon slope and intercept used.
+        If none is chosen, the values default to those in Bringi et al. (2009)
+        '''
+        if intercept is None:
+            intercept = 3.7
+            
+        Nwtmp = (self.Nw.copy()) / 1000.
+
+        # Create index line to use for separation
+        Nw_Index = np.ma.log10(self.Nw/1000.) - intercept
+                             
+        # Mask values where D0 or Nw is equal zero.  Gives a false value of 1 due
+        # to math of separator line
+        np.ma.masked_where((self.D0 == 0.), ND0_Index)
+        np.ma.masked_where((self.Nw == 0.), ND0_Index)
+        
+        return Nw_Index
+
+    ##########################################
+    
+    
     def calc_R_Z_moment_relationship(self, filter=False, SDmult=1., \
                                      limLo=1E-2, limHi=1E6):
         '''

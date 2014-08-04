@@ -138,7 +138,6 @@ def slope(M2,M4,mu):
     """
 #---------------------------------------
     Lambda = np.ma.sqrt((4 + mu) * (3 + mu) * M2 / M4)
-    print (Lambda.min(),Lambda.max())
 
     return Lambda
 #**====================================================

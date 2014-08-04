@@ -50,7 +50,7 @@ def linreg(Z,R):
     """
 #---------------------------------------
 # Use the Scipy linear regression algorithm to calculate
-    slope, intercept, rVal, pVal, std_err = stats.mstats.linregress(np.log10(Z),np.log10(R))
+    slope, intercept, rVal, pVal, std_err = stats.mstats.linregress(np.ma.log10(Z),np.ma.log10(R))
 
     return slope, intercept, rVal, pVal, std_err
 #**====================================================
