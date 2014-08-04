@@ -19,7 +19,7 @@ packages = ['pyparticleprobe',
             'pyparticleprobe.dsd_calcs',
             'pyparticleprobe.plot']
 package_dirs = {'pyparticleprobe'}
-datafiles = glob.glob(os.path.join(pathout, '*'))
+#datafiles = glob.glob(os.path.join(pathout, '*'))
 datafiles = [os.path.join('data', os.path.basename(f)) for f in datafiles]
 package_data = {'pyparticleprobe': datafiles}
 

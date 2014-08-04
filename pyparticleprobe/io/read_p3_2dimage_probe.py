@@ -30,12 +30,7 @@ import netCDF4 as n4
 import matplotlib.dates as mdate
 import scipy.interpolate as si
 
-<<<<<<< HEAD:io/read_p3_2dimage_probe.py
-import read_p3_flight as p3FltVar
-#import general.library as gl
-=======
 from . import read_p3_flight as p3FltVar
->>>>>>> d61ad8db58e4326b34bb2f5d736e610c8e1b2e15:pyparticleprobe/io/read_p3_2dimage_probe.py
 #-------------------------------------------------------------------
 # Define various constants that may be used for calculations
 #===============================================================
@@ -263,10 +258,6 @@ def ucsc_flt_lev_vars(fname):
     np.ma.masked_invalid(Temp)
     Alt = ncFile.variables['AltGPS.3'][:]
     np.ma.masked_invalid(Alt)
-<<<<<<< HEAD:io/read_p3_2dimage_probe.py
-=======
-    sea_level_dens = 1.225  # kg/m3
->>>>>>> d61ad8db58e4326b34bb2f5d736e610c8e1b2e15:pyparticleprobe/io/read_p3_2dimage_probe.py
     RhoAir = sea_level_dens * np.exp(-0.04 * Alt / Temp)
     del Temp
 
