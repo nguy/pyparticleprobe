@@ -5,9 +5,9 @@ A python package to process cloud and precipitation particle probe  data.
 
 Author: Nick Guy (nick.guy@noaa.gov)
 
-Created:  21 Jan 2014
-Updated:  14 May 2014 – Restructured functions and pathways
-Updated:  15 Jul 2014 - Refactored to take class structure.  Heavily influenced by the PyDisdrometer package by Joseph Hardin.
+Created:  21 Jan 2014   
+Updated:  14 May 2014 – Restructured functions and pathways   
+Updated:  15 Jul 2014 - Refactored to take class structure.  Heavily influenced by the PyDisdrometer package by Joseph Hardin.   
 
 ## Installation
 As of now, I have used these as a standalone package that was not installed as a package.
